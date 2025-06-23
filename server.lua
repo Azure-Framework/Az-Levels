@@ -130,7 +130,7 @@ end)
 RegisterNetEvent('level:loadStatsRP')
 AddEventHandler('level:loadStatsRP', function()
   local src = source
-  exports['az-levels']:getStats(src, function(stats)
+  exports['Az-Levels']:getStats(src, function(stats)
     if stats then
       TriggerClientEvent('level:setStatsRP', src, stats)
     end
@@ -140,9 +140,9 @@ end)
 RegisterNetEvent('level:addStatRP')
 AddEventHandler('level:addStatRP', function(stat, amt)
   local src = source
-  exports['az-levels']:addStat(src, stat, amt, function(ok)
+  exports['Az-Levels']:addStat(src, stat, amt, function(ok)
     if ok then
-      exports['az-levels']:getStats(src, function(stats)
+      exports['Az-Levels']:getStats(src, function(stats)
         TriggerClientEvent('level:updateStatsRP', src, stats)
       end)
     end
